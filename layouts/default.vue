@@ -1,9 +1,9 @@
 <script setup lang="ts">
     const items = [
         {
-            title: 'page1',
-            value: 'page1Link',
-            icon: 'mdi-account'
+            title: 'JsonPlaceholder blog',
+            value: '/posts',
+            icon: 'mdi-post'
         },
         {
             title: 'page2',
@@ -52,7 +52,9 @@
                 <v-list-item v-for="item in items"
                     :prepend-icon="item.icon"
                     :title="item.title"
-                ></v-list-item>
+                    :to="item.value"
+                >
+                </v-list-item>
             </v-list>
         </v-navigation-drawer>
 
