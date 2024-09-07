@@ -3,6 +3,7 @@
         title: string;
         body: string;
     }
+
     const url = 'https://jsonplaceholder.typicode.com/posts?_start=5&_limit=10'
     const requestObject = {
         query: {
@@ -10,8 +11,8 @@
             _limit: 5
         }
     }
-    const { data, status, error, refresh } = useFetch(url, requestObject)
 
+    const { data, status, error, refresh } = useFetch<Post[]>(url, requestObject)
 
 </script>
 
