@@ -20,7 +20,7 @@
     <v-container>
         <v-row>
             <v-col>
-                <h1>Blog</h1>
+                <h1>jsonplaceholder posts</h1>
             </v-col>
             <v-col>
                 <v-btn @click="refresh()">Refresh</v-btn>
@@ -31,12 +31,11 @@
             <v-alert>{{ error.message }}</v-alert>
         </v-row>
 
-        <v-row v-for="obj in data">
-            <v-card class="pa-md-4 ma-md-4">
-                <v-card-title>{{ obj.title }}</v-card-title>
-                <v-card-text>{{ obj.body }}</v-card-text>
-            </v-card>
-        </v-row>
-    </v-container>    
+        <v-sheet class="d-flex flex-wrap mx-auto pa-md-4 ma-md-4" elevation="4" width="100%" rounded
+            v-for="obj in data">
+            <h2>{{ obj.title }}</h2>
+            <p>{{ obj.body }}</p>
+        </v-sheet>
+    </v-container>
 
 </template>
