@@ -1,5 +1,6 @@
 <script setup lang="ts">
     interface Post {
+        id: number;
         title: string;
         body: string;
     }
@@ -31,11 +32,15 @@
             <v-alert>{{ error.message }}</v-alert>
         </v-row>
 
-        <v-sheet class="d-flex flex-wrap mx-auto pa-md-4 ma-md-4" elevation="4" width="100%" rounded
-            v-for="obj in data">
-            <h2>{{ obj.title }}</h2>
-            <p>{{ obj.body }}</p>
-        </v-sheet>
+        <v-row>
+            <v-sheet class="pa-md-4 ma-md-4 ga-3" elevation="4" width="100%" rounded
+                v-for="obj in data">
+                <NuxtLink :to="{path: `/posts/${obj.id}`}" class="text-decoration-none">
+                    <h2>{{ obj.title }}</h2>
+                    <p>{{ obj.body.substring(0, 20) }}</p>
+                </NuxtLink>
+            </v-sheet>
+        </v-row>
     </v-container>
 
 </template>
