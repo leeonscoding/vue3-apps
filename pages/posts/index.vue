@@ -1,9 +1,5 @@
 <script setup lang="ts">
-    interface Post {
-        id: number;
-        title: string;
-        body: string;
-    }
+    import type { Post } from '~/custom-types/post';
 
     const totalCount = ref<number>(0)
 
